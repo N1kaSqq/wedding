@@ -1,0 +1,21 @@
+<svg width="600" height="200" viewBox="0 0 600 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- 520O G0ABL 10=B0 -->
+  <ellipse cx="150" cy="100" rx="120" ry="80" fill="#e8b4c3" opacity="0.85"/>
+  <ellipse cx="150" cy="100" rx="100" ry="65" fill="#f5c9d6" opacity="0.9"/>
+  
+  <!-- @020O G0ABL 10=B0 -->
+  <ellipse cx="450" cy="100" rx="120" ry="80" fill="#e8b4c3" opacity="0.85"/>
+  <ellipse cx="450" cy="100" rx="100" ry="65" fill="#f5c9d6" opacity="0.9"/>
+  
+  <!-- #75; 2 F5=B@5 -->
+  <ellipse cx="300" cy="100" rx="45" ry="50" fill="#e8b4c3"/>
+  <ellipse cx="300" cy="100" rx="35" ry="40" fill="#f5c9d6"/>
+  
+  <!-- 5=B>G:8 2=87C -->
+  <path d="M 280 140 L 260 180 L 270 185 L 295 145 Z" fill="#e8b4c3" opacity="0.8"/>
+  <path d="M 320 140 L 340 180 L 330 185 L 305 145 Z" fill="#e8b4c3" opacity="0.8"/>
+  
+  <!-- "5=8 4;O >1J5<0 -->
+  <ellipse cx="155" cy="105" rx="90" ry="55" fill="#d9a0b0" opacity="0.3"/>
+  <ellipse cx="445" cy="105" rx="90" ry="55" fill="#d9a0b0" opacity="0.3"/>
+</svg>

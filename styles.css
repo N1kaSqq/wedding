@@ -1,0 +1,682 @@
+/* ===================================
+   CSS Variables & Reset
+   =================================== */
+
+:root {
+    /* Colors */
+    --color-bg: #FFFBF8;
+    --color-text: #2c2c2c;
+    --color-accent: #e8b4c3;
+    --color-white: #ffffff;
+    
+    /* Dress Code Colors */
+    --color-pink: #e8b4c3;
+    --color-brown: #6b4f4f;
+    --color-beige: #e8d8a7;
+    --color-olive: #8a9a8a;
+    --color-black: #2c2c2c;
+    
+    /* Typography */
+    --font-body: 'Montserrat Alternates', 'Montserrat', 'Arial', sans-serif;
+    --font-script: 'Great Vibes', cursive;
+    
+    /* Spacing */
+    --spacing-xs: 0.5rem;
+    --spacing-sm: 1rem;
+    --spacing-md: 2rem;
+    --spacing-lg: 3rem;
+    --spacing-xl: 4rem;
+    
+    /* Layout */
+    --max-width-mobile: 600px;
+    --max-width-desktop: 800px;
+    --nav-height: 60px;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: var(--font-body);
+    background-color: var(--color-bg);
+    color: var(--color-text);
+    line-height: 1.6;
+    font-size: 16px;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+/* ===================================
+   Navigation
+   =================================== */
+
+.navigation {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    background-color: rgba(255, 251, 248, 0.95);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    z-index: 1000;
+    padding: var(--spacing-sm) var(--spacing-md);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+}
+
+.nav-list {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: var(--spacing-md);
+    max-width: var(--max-width-desktop);
+    margin: 0 auto;
+}
+
+.nav-link {
+    text-decoration: none;
+    color: var(--color-text);
+    font-size: 0.95rem;
+    font-weight: 400;
+    transition: color 0.3s ease;
+    position: relative;
+}
+
+.nav-link:hover,
+.nav-link.active {
+    color: var(--color-accent);
+}
+
+.nav-link::after {
+    content: '';
+    position: absolute;
+    bottom: -4px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background-color: var(--color-accent);
+    transition: width 0.3s ease;
+}
+
+.nav-link:hover::after,
+.nav-link.active::after {
+    width: 100%;
+}
+
+/* ===================================
+   Common Section Styles
+   =================================== */
+
+.section {
+    padding: var(--spacing-xl) var(--spacing-md);
+    max-width: var(--max-width-mobile);
+    margin: 0 auto;
+    text-align: center;
+}
+
+.section-title {
+    font-family: var(--font-script);
+    font-size: 3rem;
+    font-weight: 400;
+    margin-bottom: var(--spacing-md);
+    color: var(--color-text);
+}
+
+.divider {
+    /* margin: var(--spacing-lg) 0; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.bow-image {
+    width: 100%;
+    max-width: 400px;
+    height: auto;
+    opacity: 0.95;
+}
+
+/* ===================================
+   Hero Section
+   =================================== */
+
+.hero {
+    padding-top: calc(var(--nav-height) + var(--spacing-xl));
+    text-align: center;
+    max-width: var(--max-width-mobile);
+    margin: 0 auto;
+    padding-left: var(--spacing-md);
+    padding-right: var(--spacing-md);
+}
+
+.hero-title {
+    font-family: var(--font-script);
+    font-size: 3.5rem;
+    font-weight: 400;
+    margin-top: var(--spacing-md);
+    color: var(--color-text);
+    line-height: 1.2;
+}
+
+.hero-date {
+    text-align: left;
+    font-size: 1rem;
+    font-weight: 300;
+    margin-bottom: var(--spacing-xl);
+    margin-left: var(--spacing-sm);
+    color: var(--color-text);
+}
+
+.hero-subtitle {
+    font-family: var(--font-script);
+    font-size: 2rem;
+    font-weight: 400;
+    margin-top: var(--spacing-xl);
+    margin-bottom: 0;
+    color: var(--color-text);
+}
+
+.hero-text {
+    font-size: 1rem;
+    line-height: 1.2;
+    font-weight: 400;
+    color: var(--color-text);
+    max-width: 500px;
+    margin: var(--spacing-md) auto;
+    padding-left: var(--spacing-sm);
+    padding-right: var(--spacing-sm);
+}
+
+/* ===================================
+   Location Section
+   =================================== */
+
+.location-section {
+    padding-top: 0;
+    padding-bottom: 0;
+}
+
+.location-title {
+    margin-bottom: 0;
+}
+
+.location-text {
+    font-size: 1rem;
+    line-height: 1.2;
+    font-weight: 400;
+    margin: var(--spacing-md) auto;
+    padding-left: var(--spacing-sm);
+    padding-right: var(--spacing-sm);
+}
+
+/* ===================================
+   Timing Section
+   =================================== */
+
+.timing-section {
+    padding-top: 0;
+    padding-bottom: 0;
+}
+
+.timing-item {
+    margin: var(--spacing-md) 0;
+    text-align: center;
+    max-width: 220px;
+}
+
+.timing-item.left {
+    margin-left: 0;
+    margin-right: auto;
+}
+
+.timing-item.right {
+    margin-left: auto;
+    margin-right: 0;
+}
+
+.timing-time {
+    font-family: var(--font-script);
+    font-size: 2.5rem;
+    font-weight: 400;
+    color: var(--color-text);
+}
+
+.timing-label {
+    font-size: 1rem;
+    font-weight: 600;
+    margin-bottom: var(--spacing-xs);
+    color: var(--color-text);
+}
+
+.timing-description {
+    font-size: 1rem;
+    line-height: 1.2;
+    font-weight: 400;
+    color: var(--color-text);
+}
+
+/* ===================================
+   Dress Code Section
+   =================================== */
+
+.dress-code-section {
+    padding-top: 0;
+    padding-bottom: 0;
+}
+
+.dress-code-intro {
+    font-size: 1rem;
+    line-height: 1.2;
+    font-weight: 400;
+    margin: var(--spacing-md) 0 var(--spacing-lg);
+}
+
+.dress-code-subtitle {
+    font-family: var(--font-script);
+    font-size: 2rem;
+    font-weight: 400;
+    margin: var(--spacing-lg) 0 var(--spacing-md);
+    color: var(--color-text);
+}
+
+.color-palette {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: var(--spacing-sm);
+    margin: var(--spacing-md) 0;
+    flex-wrap: wrap;
+}
+
+.color-circle {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    display: inline-block;
+    transition: transform 0.3s ease;
+}
+
+.color-circle:hover {
+    transform: scale(1.1);
+}
+
+.dress-code-images {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: var(--spacing-md);
+    margin: var(--spacing-lg) 0;
+    flex-wrap: wrap;
+}
+
+.dresscode-img {
+    width: 45%;
+    max-width: 250px;
+    height: auto;
+    border: 3px solid var(--color-white);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.dresscode-img-single {
+    width: 70%;
+    max-width: 350px;
+}
+
+.dresscode-img:hover {
+    transform: translateY(-5px);
+}
+
+/* ===================================
+   Details Section
+   =================================== */
+
+.detail-item {
+    margin: var(--spacing-xl) 0;
+}
+
+.detail-icon {
+    width: 65px;
+    height: auto;
+    margin-bottom: var(--spacing-md);
+    opacity: 0.8;
+}
+
+.detail-text {
+    font-size: 0.95rem;
+    line-height: 1.8;
+    font-weight: 400;
+}
+
+/* ===================================
+   Form Section
+   =================================== */
+
+.form-section {
+    padding-top: calc(var(--nav-height) + var(--spacing-md));
+}
+
+.form-intro {
+    font-size: 0.95rem;
+    line-height: 1.8;
+    font-weight: 400;
+    margin: var(--spacing-md) 0 var(--spacing-lg);
+}
+
+.wedding-form {
+    text-align: left;
+    max-width: 500px;
+    margin: 0 auto;
+}
+
+.form-group {
+    margin-bottom: var(--spacing-lg);
+}
+
+.form-label {
+    display: block;
+    font-size: 0.95rem;
+    font-weight: 400;
+    margin-bottom: var(--spacing-sm);
+    line-height: 1.6;
+    color: var(--color-text);
+}
+
+.form-input {
+    width: 100%;
+    padding: 0.75rem 1rem;
+    font-size: 1rem;
+    font-family: var(--font-body);
+    border: 1px solid #ddd;
+    border-bottom: 2px solid var(--color-text);
+    background-color: var(--color-white);
+    transition: border-color 0.3s ease;
+    outline: none;
+}
+
+.form-input:focus {
+    border-bottom-color: var(--color-accent);
+}
+
+.form-input::placeholder {
+    color: #999;
+    font-weight: 300;
+}
+
+/* Radio Buttons */
+.radio-group {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-sm);
+}
+
+.radio-label {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    font-size: 0.95rem;
+    font-weight: 400;
+    position: relative;
+    padding-left: 35px;
+}
+
+.radio-label input[type="radio"] {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+}
+
+.radio-custom {
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    height: 22px;
+    width: 22px;
+    border: 2px solid var(--color-text);
+    border-radius: 50%;
+    background-color: var(--color-white);
+}
+
+.radio-label input[type="radio"]:checked ~ .radio-custom {
+    background-color: var(--color-white);
+    border-color: var(--color-accent);
+}
+
+.radio-label input[type="radio"]:checked ~ .radio-custom::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background-color: var(--color-accent);
+}
+
+/* Checkboxes */
+.checkbox-group {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-sm);
+}
+
+.checkbox-label {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    font-size: 0.95rem;
+    font-weight: 400;
+    position: relative;
+    padding-left: 35px;
+}
+
+.checkbox-label input[type="checkbox"] {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+}
+
+.checkbox-custom {
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    height: 22px;
+    width: 22px;
+    border: 2px solid var(--color-text);
+    background-color: var(--color-white);
+}
+
+.checkbox-label input[type="checkbox"]:checked ~ .checkbox-custom {
+    background-color: var(--color-white);
+    border-color: var(--color-accent);
+}
+
+.checkbox-label input[type="checkbox"]:checked ~ .checkbox-custom::after {
+    content: '';
+    position: absolute;
+    left: 6px;
+    top: 2px;
+    width: 5px;
+    height: 10px;
+    border: solid var(--color-accent);
+    border-width: 0 2px 2px 0;
+    transform: rotate(45deg);
+}
+
+/* Form Note */
+.form-note {
+    text-align: center;
+    font-size: 0.9rem;
+    line-height: 1.8;
+    margin: var(--spacing-lg) 0;
+    color: var(--color-text);
+}
+
+/* Submit Button */
+.submit-button {
+    width: 100%;
+    padding: 1rem 2rem;
+    font-size: 1.1rem;
+    font-weight: 500;
+    font-family: var(--font-body);
+    color: var(--color-text);
+    background-color: transparent;
+    border: 2px solid var(--color-text);
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin-top: var(--spacing-md);
+}
+
+.submit-button:hover {
+    background-color: var(--color-text);
+    color: var(--color-white);
+}
+
+.submit-button:active {
+    transform: scale(0.98);
+}
+
+/* Form Status */
+.form-status {
+    margin-top: var(--spacing-md);
+    padding: var(--spacing-sm);
+    text-align: center;
+    font-size: 0.95rem;
+    border-radius: 4px;
+    display: none;
+}
+
+.form-status.success {
+    display: block;
+    background-color: #d4edda;
+    color: #155724;
+    border: 1px solid #c3e6cb;
+}
+
+.form-status.error {
+    display: block;
+    background-color: #f8d7da;
+    color: #721c24;
+    border: 1px solid #f5c6cb;
+}
+
+/* ===================================
+   Footer
+   =================================== */
+
+.footer {
+    padding: var(--spacing-xl) var(--spacing-md);
+    text-align: center;
+}
+
+.footer-text {
+    font-family: var(--font-script);
+    font-size: 2.5rem;
+    font-weight: 400;
+    color: var(--color-text);
+}
+
+/* ===================================
+   Responsive Design - Desktop
+   =================================== */
+
+@media (min-width: 768px) {
+    .section {
+        max-width: var(--max-width-desktop);
+        padding: var(--spacing-xl) var(--spacing-lg);
+    }
+    
+    .hero {
+        max-width: var(--max-width-desktop);
+        padding-left: var(--spacing-lg);
+        padding-right: var(--spacing-lg);
+    }
+    
+    .hero-title {
+        font-size: 4.5rem;
+    }
+    
+    .hero-subtitle {
+        font-size: 2.5rem;
+    }
+    
+    .section-title {
+        font-size: 3.5rem;
+    }
+    
+    .timing-time {
+        font-size: 3rem;
+    }
+    
+    .dress-code-subtitle {
+        font-size: 2.5rem;
+    }
+    
+    .footer-text {
+        font-size: 3rem;
+    }
+    
+    .nav-list {
+        gap: var(--spacing-lg);
+    }
+    
+    .nav-link {
+        font-size: 1rem;
+    }
+}
+
+@media (min-width: 1024px) {
+    .bow-image {
+        max-width: 500px;
+    }
+}
+
+/* ===================================
+   Accessibility
+   =================================== */
+
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border-width: 0;
+}
+
+/* Focus styles for keyboard navigation */
+a:focus,
+button:focus,
+input:focus,
+textarea:focus {
+    outline: 2px solid var(--color-accent);
+    outline-offset: 2px;
+}
+
+/* ===================================
+   Print Styles
+   =================================== */
+
+@media print {
+    .navigation {
+        position: static;
+    }
+    
+    .submit-button {
+        display: none;
+    }
+}
