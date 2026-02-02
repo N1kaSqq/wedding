@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>QR Code - Wedding Invitation</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #FFFBF8;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            margin: 0;
+            padding: 20px;
+        }
+        
+        .container {
+            background: white;
+            padding: 40px;
+            border-radius: 20px;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            max-width: 500px;
+        }
+        
+        h1 {
+            font-family: 'Georgia', serif;
+            font-style: italic;
+            font-size: 2.5rem;
+            color: #2c2c2c;
+            margin-bottom: 10px;
+        }
+        
+        .date {
+            color: #e8b4c3;
+            font-size: 1.2rem;
+            margin-bottom: 30px;
+        }
+        
+        .qr-code {
+            margin: 30px 0;
+            padding: 20px;
+            background: white;
+            border: 3px solid #e8b4c3;
+            border-radius: 10px;
+            display: inline-block;
+        }
+        
+        .qr-code img {
+            display: block;
+            width: 300px;
+            height: 300px;
+        }
+        
+        .description {
+            color: #666;
+            margin: 20px 0;
+            line-height: 1.6;
+        }
+        
+        .link {
+            color: #e8b4c3;
+            text-decoration: none;
+            font-size: 0.9rem;
+            word-break: break-all;
+        }
+        
+        .link:hover {
+            text-decoration: underline;
+        }
+        
+        .download-btn {
+            margin-top: 30px;
+            padding: 15px 30px;
+            background-color: #e8b4c3;
+            color: white;
+            border: none;
+            border-radius: 30px;
+            font-size: 1rem;
+            cursor: pointer;
+            text-decoration: none;
+            display: inline-block;
+            transition: background-color 0.3s;
+        }
+        
+        .download-btn:hover {
+            background-color: #d9a0b0;
+        }
+        
+        .print-btn {
+            margin-left: 10px;
+            padding: 15px 30px;
+            background-color: #2c2c2c;
+            color: white;
+            border: none;
+            border-radius: 30px;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        
+        .print-btn:hover {
+            background-color: #444;
+        }
+        
+        @media print {
+            body {
+                background: white;
+            }
+            .download-btn, .print-btn {
+                display: none;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Wedding Day</h1>
+        <p class="date">20.06.2026</p>
+        
+        <div class="qr-code">
+            <img src="https://api.qrserver.com/v1/create-qr-code/?size=300x300&data=https://n1kasqq.github.io/wedding/&color=2c2c2c&bgcolor=ffffff" 
+                 alt="QR Code - Wedding Invitation">
+        </div>
+        
+        <p class="description">
+            Отсканируйте QR-код, чтобы открыть приглашение<br>
+            и заполнить анкету гостя
+        </p>
+        
+        <p>
+            <a href="https://n1kasqq.github.io/wedding/" class="link" target="_blank">
+                https://n1kasqq.github.io/wedding/
+            </a>
+        </p>
+        
+        <a href="https://api.qrserver.com/v1/create-qr-code/?size=1000x1000&data=https://n1kasqq.github.io/wedding/&color=2c2c2c&bgcolor=ffffff" 
+           download="wedding-qr-code.png" 
+           class="download-btn">
+            Скачать QR-код
+        </a>
+        
+        <button onclick="window.print()" class="print-btn">
+            Распечатать
+        </button>
+    </div>
+</body>
+</html>
