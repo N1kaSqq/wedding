@@ -267,6 +267,4 @@ document.addEventListener('DOMContentLoaded', function() {
     // ===================================
     
     console.log('Wedding website loaded successfully!');
-    console.log('Formspree endpoint:', form ? form.action : 'Form not found');
-    console.log('Remember to update the Formspree endpoint before deployment.');
 });

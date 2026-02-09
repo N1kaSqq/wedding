@@ -149,7 +149,7 @@ body {
    =================================== */
 
 .hero {
-    padding-top: calc(var(--nav-height) + var(--spacing-xl));
+    padding-top: calc(var(--nav-height) + var(--spacing-md));
     text-align: center;
     max-width: var(--max-width-mobile);
     margin: 0 auto;
@@ -314,7 +314,7 @@ body {
     justify-content: center;
     align-items: center;
     gap: var(--spacing-md);
-    margin: var(--spacing-sm) 0;
+    margin: var(--spacing-md) 0;
     flex-wrap: nowrap;
 }
 
@@ -336,6 +336,26 @@ body {
     border: 1px solid #000;
     pointer-events: none;
     z-index: 1;
+}
+
+.dress-code-images.hero-main-images {
+    gap: var(--spacing-sm);
+}
+
+.hero-main-images .dresscode-img-wrapper {
+    width: 130px;
+}
+
+.hero-main-images .dresscode-img-wrapper:first-child {
+    transform: translateY(-15px);
+}
+
+.hero-main-images .dresscode-img-wrapper:last-child {
+    transform: translateY(15px);
+}
+
+.hero-main-images .dresscode-img-wrapper .dresscode-img-2 {
+    transform: translateY(20px) translateX(-20px);
 }
 
 .dresscode-img {
@@ -381,7 +401,7 @@ body {
 
 .detail-icon-2 {
     width: auto;
-    height: 100px;
+    height: 110px;
 }
 
 .detail-text {
@@ -612,7 +632,7 @@ body {
    =================================== */
 
 .footer {
-    padding: var(--spacing-xl) var(--spacing-md);
+    padding: var(--spacing-md) var(--spacing-md);
     text-align: center;
 }
 
