@@ -111,10 +111,20 @@ document.addEventListener('DOMContentLoaded', function() {
             document.querySelectorAll('input[name="drinks_preferences"]:checked').forEach(cb => {
                 drinksPreferences.push(cb.value);
             });
+            const drinksOtherCheckbox = document.getElementById('drinks_other_checkbox');
+            const drinksOtherInput = document.getElementById('drinks_other_input');
+            if (drinksOtherCheckbox && drinksOtherCheckbox.checked) {
+                const otherText = drinksOtherInput && drinksOtherInput.value.trim();
+                const otherIndex = drinksPreferences.indexOf('Другое');
+                if (otherIndex !== -1) {
+                    drinksPreferences[otherIndex] = otherText ? 'Другое: ' + otherText : 'Другое';
+                }
+            }
             
             // Remove old entries and add combined values
             formData.delete('food_preferences');
             formData.delete('drinks_preferences');
+            formData.delete('drinks_other');
             formData.append('food_preferences', foodPreferences.join(', ') || 'Не указано');
             formData.append('drinks_preferences', drinksPreferences.join(', ') || 'Не указано');
             
@@ -137,6 +147,10 @@ document.addEventListener('DOMContentLoaded', function() {
                 if (response.ok) {
                     showFormStatus('Спасибо! Ваши данные успешно отправлены. До встречи на свадьбе!', 'success');
                     form.reset();
+                    const wrapper = document.getElementById('drinks_other_wrapper');
+                    const otherInput = document.getElementById('drinks_other_input');
+                    if (wrapper) wrapper.style.display = 'none';
+                    if (otherInput) otherInput.value = '';
                     
                     // Scroll to success message
                     setTimeout(() => {
@@ -193,6 +207,24 @@ document.addEventListener('DOMContentLoaded', function() {
     // ===================================
     // Accessibility Enhancements
     // ===================================
+    
+    // ===================================
+    // "Другое" drinks input toggle
+    // ===================================
+    const drinksOtherCheckbox = document.getElementById('drinks_other_checkbox');
+    const drinksOtherWrapper = document.getElementById('drinks_other_wrapper');
+    const drinksOtherInput = document.getElementById('drinks_other_input');
+    if (drinksOtherCheckbox && drinksOtherWrapper && drinksOtherInput) {
+        drinksOtherCheckbox.addEventListener('change', function() {
+            if (this.checked) {
+                drinksOtherWrapper.style.display = 'block';
+                drinksOtherInput.focus();
+            } else {
+                drinksOtherWrapper.style.display = 'none';
+                drinksOtherInput.value = '';
+            }
+        });
+    }
     
     // Allow keyboard navigation for custom radio/checkbox
     document.querySelectorAll('.radio-label, .checkbox-label').forEach(label => {

@@ -330,10 +330,20 @@
                         Безалкогольные напитки
                     </label>
                     <label class="checkbox-label">
-                        <input type="checkbox" name="drinks_preferences" value="Другое">
+                        <input type="checkbox" name="drinks_preferences" value="Другое" id="drinks_other_checkbox">
                         <span class="checkbox-custom"></span>
                         Другое:
                     </label>
+                    <div id="drinks_other_wrapper" class="drinks-other-wrapper" style="display: none; margin-top: 0.75rem; margin-left: 1.5rem;">
+                        <input 
+                            type="text" 
+                            id="drinks_other_input" 
+                            name="drinks_other" 
+                            class="form-input" 
+                            placeholder="Напишите, что предпочитаете"
+                            style="max-width: 100%;"
+                        >
+                    </div>
                 </div>
             </div>
             
